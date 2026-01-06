@@ -5,7 +5,7 @@ import { SearchResultsPage } from '../../pages/SearchResultsPage';
 
 test.describe('Product Browsing & Search', () => {
 
-  // ✅ Test Case 1 – Smoke Test
+  //  Test Case 1 – Smoke Test
   test('PROD-NAV-SM-01 - Navigate Through Categories', async ({ page }) => {
     const categoryPage = new CategoryPage(page);
     await page.goto('https://demowebshop.tricentis.com/');
@@ -18,7 +18,7 @@ test.describe('Product Browsing & Search', () => {
     await expect(page.locator('.page-title h1')).toHaveText('Books');
   });
 
-  // ✅ Test Case 2 – Functional
+  //  Test Case 2 – Functional
   test('PROD-NAV-FN-02 - Open Product Details Page', async ({ page }) => {
     await page.goto('https://demowebshop.tricentis.com/books');
     
@@ -30,7 +30,7 @@ test.describe('Product Browsing & Search', () => {
     await expect(page.locator('.product-essential .prices')).toBeVisible();
   });
 
-  // ✅ Test Case 3 – Functional
+  //  Test Case 3 – Functional
   test('PROD-SEARCH-FN-03 - Search for Existing Product', async ({ page }) => {
     const searchPage = new SearchResultsPage(page);
     await page.goto('https://demowebshop.tricentis.com/');
@@ -42,7 +42,7 @@ test.describe('Product Browsing & Search', () => {
     expect(await productItems.count()).toBeGreaterThan(0);
   });
 
-  // ✅ Test Case 4 – Functional
+  //  Test Case 4 – Functional
   test('PROD-SEARCH-FN-04 - Search for Non-Existing Product', async ({ page }) => {
     const searchPage = new SearchResultsPage(page);
     await page.goto('https://demowebshop.tricentis.com/');
